@@ -1,0 +1,90 @@
+package org.mars.system.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 菜单权限规则表
+ * </p>
+ *
+ * @Author huangzhilin
+ * @since 2019-03-29
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+public class SysPermissionDataRule implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * id
+     */
+    @TableId(type = IdType.ID_WORKER_STR)
+    private String id;
+
+    /**
+     * 对应的菜单id
+     */
+    private String permissionId;
+
+    /**
+     * 规则名称
+     */
+    private String ruleName;
+
+    /**
+     * 字段
+     */
+    private String ruleColumn;
+
+    /**
+     * 条件
+     */
+    private String ruleConditions;
+
+    /**
+     * 规则值
+     */
+    private String ruleValue;
+
+    /**
+     * 状态值 1有效 0无效
+     */
+    private String status;
+
+    /**
+     * 创建时间
+     */
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+
+    /**
+     * 创建人
+     */
+    private String createBy;
+
+    /**
+     * 修改时间
+     */
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date updateTime;
+
+    /**
+     * 修改人
+     */
+    private String updateBy;
+}

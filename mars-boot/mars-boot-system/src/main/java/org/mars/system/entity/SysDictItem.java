@@ -1,0 +1,84 @@
+package org.mars.system.entity;
+
+import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+import org.mars.base.aspect.annotation.Dict;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * <p>
+ *
+ * </p>
+ *
+ * @Author zhangweijian
+ * @since 2018-12-28
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+public class SysDictItem implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * id
+     */
+    @TableId(type = IdType.ID_WORKER_STR)
+    private String id;
+
+    /**
+     * 字典id
+     */
+    private String dictId;
+
+    /**
+     * 字典项文本
+     */
+    @Excel(name = "字典项文本", width = 20)
+    private String itemText;
+
+    /**
+     * 字典项值
+     */
+    @Excel(name = "字典项值", width = 30)
+    private String itemValue;
+
+    /**
+     * 描述
+     */
+    @Excel(name = "描述", width = 40)
+    private String description;
+
+    /**
+     * 排序
+     */
+    @Excel(name = "排序", width = 15,type=4)
+    private Integer sortOrder;
+
+
+    /**
+     * 状态（1启用 0不启用）
+     */
+    @Dict(dicCode = "dict_item_status")
+    private Integer status;
+
+    private String createBy;
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+
+    private String updateBy;
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date updateTime;
+
+
+}
