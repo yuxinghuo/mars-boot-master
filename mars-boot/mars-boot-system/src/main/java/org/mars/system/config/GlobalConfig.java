@@ -1,4 +1,4 @@
-package org.mars.config;
+package org.mars.system.config;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;

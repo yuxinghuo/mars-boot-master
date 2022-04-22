@@ -1,4 +1,4 @@
-package org.mars.base.aspect.annotation;
+package org.mars.base.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

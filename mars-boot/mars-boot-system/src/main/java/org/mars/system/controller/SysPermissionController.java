@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.util.JwtUtil;
 import org.mars.base.util.MD5Util;

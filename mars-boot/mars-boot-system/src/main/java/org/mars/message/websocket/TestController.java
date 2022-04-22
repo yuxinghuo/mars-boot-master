@@ -1,6 +1,6 @@
 package org.mars.message.websocket;
 
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.WebsocketConst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

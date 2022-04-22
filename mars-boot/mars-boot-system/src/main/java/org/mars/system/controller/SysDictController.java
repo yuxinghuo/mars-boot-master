@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.query.QueryGenerator;

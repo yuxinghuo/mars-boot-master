@@ -1,4 +1,4 @@
-package org.mars.config.mybatis;
+package org.mars.system.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.binding.MapperMethod.ParamMap;

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.apache.shiro.SecurityUtils;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.system.vo.DictModel;
 import org.mars.base.system.vo.LoginUser;

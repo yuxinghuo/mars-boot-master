@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysLog;

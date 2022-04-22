@@ -1,7 +1,7 @@
 package org.mars.base.util;
 
 import com.alibaba.fastjson.JSONObject;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;

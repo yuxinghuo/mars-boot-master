@@ -6,7 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.system.base.controller.JeecgController;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.message.entity.MsgParams;

@@ -2,7 +2,7 @@ package org.mars.system.service;
 
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.system.entity.SysRole;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.oConvertUtils;

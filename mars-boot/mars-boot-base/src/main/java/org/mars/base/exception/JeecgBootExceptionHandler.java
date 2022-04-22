@@ -2,7 +2,7 @@ package org.mars.base.exception;
 
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthorizedException;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.redis.connection.PoolException;

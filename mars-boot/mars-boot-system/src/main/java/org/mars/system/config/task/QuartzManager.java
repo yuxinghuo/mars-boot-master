@@ -1,4 +1,4 @@
-package org.mars.config.task;
+package org.mars.system.config.task;
 
 import org.quartz.*;
 

@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.mars.base.aspect.annotation.AutoLog;
+import org.mars.base.annotation.AutoLog;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.IPUtils;
@@ -41,7 +41,7 @@ public class AutoLogAspect {
     @Autowired
     private ISysLogService sysLogService;
 
-    @Pointcut("@annotation(org.mars.base.aspect.annotation.AutoLog)")
+    @Pointcut("@annotation(org.mars.base.annotation.AutoLog)")
     public void logPointCut() {
 
     }

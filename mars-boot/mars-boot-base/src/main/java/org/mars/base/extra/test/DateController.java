@@ -2,7 +2,7 @@ package org.mars.base.extra.test;
 
 import java.util.Date;
 
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

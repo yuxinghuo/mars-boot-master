@@ -1,4 +1,4 @@
-package org.mars.config;
+package org.mars.system.config;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

@@ -2,7 +2,7 @@ package org.mars.system.entity;
 
 import java.util.Date;
 
-import org.mars.base.aspect.annotation.Dict;
+import org.mars.base.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

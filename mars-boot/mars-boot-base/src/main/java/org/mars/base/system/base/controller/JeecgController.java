@@ -12,7 +12,7 @@ import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.oConvertUtils;

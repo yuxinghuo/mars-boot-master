@@ -1,4 +1,4 @@
-package org.mars.base.api.vo;
+package org.mars.base.model;
 
 import lombok.Data;
 import org.mars.base.constant.CommonConstant;
@@ -8,9 +8,8 @@ import java.io.Serializable;
 /**
  * 接口返回数据格式
  *
- * @author scott
- * @email jeecgos@163.com
- * @date 2019年1月19日
+ * @author hyx
+ * @date 2022年4月20日
  */
 @Data
 public class Result<T> implements Serializable {
@@ -54,7 +53,7 @@ public class Result<T> implements Serializable {
     }
 
     public static Result<Object> ok() {
-        Result<Object> r = new Result<Object>();
+        Result<Object> r = new Result<>();
         r.setSuccess(true);
         r.setCode(CommonConstant.SC_OK_200);
         r.setMessage("成功");
@@ -62,7 +61,7 @@ public class Result<T> implements Serializable {
     }
 
     public static Result<Object> ok(String msg) {
-        Result<Object> r = new Result<Object>();
+        Result<Object> r = new Result<>();
         r.setSuccess(true);
         r.setCode(CommonConstant.SC_OK_200);
         r.setMessage(msg);
@@ -70,7 +69,7 @@ public class Result<T> implements Serializable {
     }
 
     public static Result<Object> ok(Object data) {
-        Result<Object> r = new Result<Object>();
+        Result<Object> r = new Result<>();
         r.setSuccess(true);
         r.setCode(CommonConstant.SC_OK_200);
         r.setResult(data);
@@ -78,7 +77,7 @@ public class Result<T> implements Serializable {
     }
 
     public static Result<Object> ok(Object data, String msg) {
-        Result<Object> r = new Result<Object>();
+        Result<Object> r = new Result<>();
         r.setSuccess(true);
         r.setCode(CommonConstant.SC_OK_200);
         r.setResult(data);

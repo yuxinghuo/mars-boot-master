@@ -1,4 +1,4 @@
-package org.mars.config;
+package org.mars.system.config;
 
 import org.mars.shiro.authc.interceptor.OnlineInterceptor;
 import org.springframework.beans.factory.annotation.Value;

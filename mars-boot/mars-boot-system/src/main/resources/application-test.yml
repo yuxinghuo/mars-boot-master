@@ -231,9 +231,6 @@ jeecg :
     minio_name: ??
     minio_pass: ??
     bucketName: otatest
-#cas单点登录
-cas:
-  prefixUrl: http://cas.example.org:8443/cas
 global:
   ignore-captcha: false #忽略验证码校验
   aes-key: A012345678912345 #默认长度为16

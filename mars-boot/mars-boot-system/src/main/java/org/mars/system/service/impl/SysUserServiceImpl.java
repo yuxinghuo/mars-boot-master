@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.api.ISysBaseAPI;

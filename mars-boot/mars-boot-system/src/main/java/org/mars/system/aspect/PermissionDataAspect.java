@@ -11,7 +11,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.mars.base.aspect.annotation.PermissionData;
+import org.mars.base.annotation.PermissionData;
 import org.mars.base.system.util.JeecgDataAutorUtils;
 import org.mars.base.system.util.JwtUtil;
 import org.mars.base.system.vo.SysPermissionDataRuleModel;
@@ -55,7 +55,7 @@ public class PermissionDataAspect {
     @Autowired
     private ISysUserService sysUserService;
 
-    @Pointcut("@annotation(org.mars.base.aspect.annotation.PermissionData)")
+    @Pointcut("@annotation(org.mars.base.annotation.PermissionData)")
     public void pointCut() {
 
     }

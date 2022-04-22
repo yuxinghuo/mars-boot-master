@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.mars.base.aspect.annotation.Dict;
+import org.mars.base.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;

@@ -2,7 +2,7 @@ package org.mars.system.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.system.mapper.SysDictMapper;
 import org.mars.system.model.DuplicateCheckVo;
 import org.springframework.beans.factory.annotation.Autowired;

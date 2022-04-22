@@ -3,7 +3,7 @@ package org.mars.system.service.impl;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.util.ImportExcelUtil;
 import org.mars.system.entity.SysRole;

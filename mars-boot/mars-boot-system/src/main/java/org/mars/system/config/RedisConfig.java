@@ -1,4 +1,4 @@
-package org.mars.config;
+package org.mars.system.config;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ArrayUtil;

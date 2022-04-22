@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import org.mars.base.aspect.annotation.Dict;
+import org.mars.base.annotation.Dict;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.filechooser.FileSystemView;
 
-import org.mars.base.api.vo.Result;
+import org.mars.base.model.Result;
 import org.mars.monitor.domain.RedisInfo;
 import org.mars.monitor.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
