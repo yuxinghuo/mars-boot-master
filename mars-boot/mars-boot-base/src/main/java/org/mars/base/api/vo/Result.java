@@ -1,7 +1,5 @@
 package org.mars.base.api.vo;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.mars.base.constant.CommonConstant;
 
@@ -9,13 +7,12 @@ import java.io.Serializable;
 
 /**
  * 接口返回数据格式
- * 
+ *
  * @author scott
  * @email jeecgos@163.com
  * @date 2019年1月19日
  */
 @Data
-@ApiModel(value = "接口返回对象", description = "接口返回对象")
 public class Result<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,31 +20,26 @@ public class Result<T> implements Serializable {
     /**
      * 成功标志
      */
-    @ApiModelProperty(value = "成功标志")
     private boolean success = true;
 
     /**
      * 返回处理消息
      */
-    @ApiModelProperty(value = "返回处理消息")
     private String message = "操作成功！";
 
     /**
      * 返回代码
      */
-    @ApiModelProperty(value = "返回代码")
     private Integer code = 0;
 
     /**
      * 返回数据对象 data
      */
-    @ApiModelProperty(value = "返回数据对象")
     private T result;
 
     /**
      * 时间戳
      */
-    @ApiModelProperty(value = "时间戳")
     private long timestamp = System.currentTimeMillis();
 
     public Result() {
@@ -84,7 +76,8 @@ public class Result<T> implements Serializable {
         r.setResult(data);
         return r;
     }
-    public static Result<Object> ok(Object data,String msg) {
+
+    public static Result<Object> ok(Object data, String msg) {
         Result<Object> r = new Result<Object>();
         r.setSuccess(true);
         r.setCode(CommonConstant.SC_OK_200);
@@ -95,7 +88,7 @@ public class Result<T> implements Serializable {
 
     /**
      * 增加一个可以返回任何类型的方法
-     * 
+     *
      * @param <T>
      * @param data
      * @return

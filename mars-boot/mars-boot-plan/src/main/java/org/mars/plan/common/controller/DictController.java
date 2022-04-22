@@ -3,9 +3,6 @@ package org.mars.plan.common.controller;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.dynamic.datasource.annotation.DS;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.mars.base.api.vo.Result;
 import org.mars.base.system.api.ISysBaseAPI;
@@ -29,7 +26,6 @@ import java.util.List;
  * @version V1.0
  * @since 2020年3月10日
  */
-@Api(tags = "公共接口模块")
 @Slf4j
 @Validated
 @RestController
@@ -48,9 +44,8 @@ public class DictController {
      *
      * @param dictCode 表名,文本字段,code字段 | 举例：t_wbxt,wbxtmc,wbxtbm
      */
-    @ApiOperation(value = "字典控制器-获取字典数据", notes = "字典控制器-获取字典数据")
     @GetMapping("/getDictItems/{dictCode}")
-    public Result<List<DictModel>> getDictItems(@ApiParam("格式:table,text,code") @PathVariable String dictCode) {
+    public Result<List<DictModel>> getDictItems(@PathVariable String dictCode) {
         log.info("dictCode={}", dictCode);
         String[] params = dictCode.split(StrUtil.COMMA);
         Assert.isTrue(params.length == DICT_ALL || params.length == DICT_FILTER, "字典Code格式不正确！");

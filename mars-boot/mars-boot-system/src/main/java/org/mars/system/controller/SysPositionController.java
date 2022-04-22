@@ -1,11 +1,14 @@
 package org.mars.system.controller;
 
+import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.mars.base.api.vo.Result;
 import org.mars.base.aspect.annotation.AutoLog;
@@ -15,11 +18,6 @@ import org.mars.base.util.ImportExcelUtil;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysPosition;
 import org.mars.system.service.ISysPositionService;
-import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,7 +41,6 @@ import java.util.Map;
  * @Version: V1.0
  */
 @Slf4j
-@Api(tags = "职务表")
 @RestController
 @RequestMapping("/sys/position")
 public class SysPositionController {
@@ -61,7 +58,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-分页列表查询")
-    @ApiOperation(value = "职务表-分页列表查询", notes = "职务表-分页列表查询")
     @GetMapping(value = "/list")
     public Result<IPage<SysPosition>> queryPageList(SysPosition sysPosition,
                                                     @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
@@ -83,7 +79,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-添加")
-    @ApiOperation(value = "职务表-添加", notes = "职务表-添加")
     @PostMapping(value = "/add")
     public Result<SysPosition> add(@RequestBody SysPosition sysPosition) {
         Result<SysPosition> result = new Result<SysPosition>();
@@ -104,7 +99,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-编辑")
-    @ApiOperation(value = "职务表-编辑", notes = "职务表-编辑")
     @PutMapping(value = "/edit")
     public Result<SysPosition> edit(@RequestBody SysPosition sysPosition) {
         Result<SysPosition> result = new Result<SysPosition>();
@@ -129,7 +123,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-通过id删除")
-    @ApiOperation(value = "职务表-通过id删除", notes = "职务表-通过id删除")
     @DeleteMapping(value = "/delete")
     public Result<?> delete(@RequestParam(name = "id", required = true) String id) {
         try {
@@ -148,7 +141,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-批量删除")
-    @ApiOperation(value = "职务表-批量删除", notes = "职务表-批量删除")
     @DeleteMapping(value = "/deleteBatch")
     public Result<SysPosition> deleteBatch(@RequestParam(name = "ids", required = true) String ids) {
         Result<SysPosition> result = new Result<SysPosition>();
@@ -168,7 +160,6 @@ public class SysPositionController {
      * @return
      */
     @AutoLog(value = "职务表-通过id查询")
-    @ApiOperation(value = "职务表-通过id查询", notes = "职务表-通过id查询")
     @GetMapping(value = "/queryById")
     public Result<SysPosition> queryById(@RequestParam(name = "id", required = true) String id) {
         Result<SysPosition> result = new Result<SysPosition>();
@@ -222,7 +213,7 @@ public class SysPositionController {
      * @return
      */
     @RequestMapping(value = "/importExcel", method = RequestMethod.POST)
-    public Result<?> importExcel(HttpServletRequest request, HttpServletResponse response)throws IOException {
+    public Result<?> importExcel(HttpServletRequest request, HttpServletResponse response) throws IOException {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
         // 错误信息
@@ -235,10 +226,10 @@ public class SysPositionController {
             params.setHeadRows(1);
             params.setNeedSave(true);
             try {
-                List<Object>  listSysPositions = ExcelImportUtil.importExcel(file.getInputStream(), SysPosition.class, params);
-                List<String> list = ImportExcelUtil.importDateSave(listSysPositions, ISysPositionService.class, errorMessage,CommonConstant.SQL_INDEX_UNIQ_CODE);
-                errorLines+=list.size();
-                successLines+=(listSysPositions.size()-errorLines);
+                List<Object> listSysPositions = ExcelImportUtil.importExcel(file.getInputStream(), SysPosition.class, params);
+                List<String> list = ImportExcelUtil.importDateSave(listSysPositions, ISysPositionService.class, errorMessage, CommonConstant.SQL_INDEX_UNIQ_CODE);
+                errorLines += list.size();
+                successLines += (listSysPositions.size() - errorLines);
             } catch (Exception e) {
                 log.error(e.getMessage(), e);
                 return Result.error("文件导入失败:" + e.getMessage());
@@ -250,7 +241,7 @@ public class SysPositionController {
                 }
             }
         }
-        return ImportExcelUtil.imporReturnRes(errorLines,successLines,errorMessage);
+        return ImportExcelUtil.imporReturnRes(errorLines, successLines, errorMessage);
     }
 
 }

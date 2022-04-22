@@ -1,9 +1,13 @@
 package org.mars.system.controller;
 
+import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.api.vo.Result;
@@ -18,11 +22,6 @@ import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysDepart;
 import org.mars.system.model.DepartIdTreeModel;
 import org.mars.system.service.ISysDepartService;
-import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -172,7 +171,6 @@ public class SysDepartController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "通过id查询", notes = "通过id查询")
     @GetMapping(value = "/queryById")
     public Result<?> queryById(@RequestParam(name = "id", required = true) String id) {
         SysDepart sysDepart = sysDepartService.getById(id);
@@ -188,7 +186,6 @@ public class SysDepartController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "通过id查询上级部门信息", notes = "通过id查询上级部门信息")
     @GetMapping(value = "/queryParentInfoById")
     public Result<?> queryParentInfoById(@RequestParam(name = "id", required = true) String id) {
         SysDepart sysDepart = sysDepartService.getById(id);

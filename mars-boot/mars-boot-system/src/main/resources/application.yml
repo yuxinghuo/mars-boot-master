@@ -3,12 +3,6 @@ spring:
     banner-mode: log
   profiles:
     active: test
-swagger:
-  production: false
-  basic:
-    enable: false
-    username: jeecg
-    password: jeecg1314
 mars:
   version: V1.0.0
 #配置日志地址

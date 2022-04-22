@@ -1,6 +1,5 @@
 package org.mars.plan.common.model;
 
-import io.swagger.annotations.ApiParam;
 import lombok.Data;
 
 /**
@@ -13,7 +12,6 @@ import lombok.Data;
 @Data
 public class DepartParamModel {
 
-    @ApiParam("部门id")
     private String id;
     /**
      * *********下列字段将自动补充**********
