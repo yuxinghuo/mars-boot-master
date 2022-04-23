@@ -1,4 +1,4 @@
-package org.mars.base.system.vo;
+package org.mars.base.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

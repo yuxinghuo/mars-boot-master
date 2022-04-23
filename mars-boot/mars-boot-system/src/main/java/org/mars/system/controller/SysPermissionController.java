@@ -569,7 +569,6 @@ public class SysPermissionController {
 			} else {
 				json.put("route", "0");// 表示不生成路由
 			}
-
 			if (isWWWHttpUrl(permission.getUrl())) {
 				json.put("path", MD5Util.MD5Encode(permission.getUrl(), "utf-8"));
 			} else {

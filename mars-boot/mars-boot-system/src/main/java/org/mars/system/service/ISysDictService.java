@@ -3,8 +3,8 @@ package org.mars.system.service;
 import java.util.List;
 import java.util.Map;
 
-import org.mars.base.system.vo.DictModel;
-import org.mars.base.system.vo.DictQuery;
+import org.mars.base.model.DictModel;
+import org.mars.base.model.DictQuery;
 import org.mars.system.entity.SysDict;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.mars.system.entity.SysDictItem;

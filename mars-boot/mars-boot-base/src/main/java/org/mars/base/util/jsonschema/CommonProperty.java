@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
-import org.mars.base.system.vo.DictModel;
+import org.mars.base.model.DictModel;
 
 import com.alibaba.fastjson.JSONObject;
 

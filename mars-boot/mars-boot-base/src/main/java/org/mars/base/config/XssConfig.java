@@ -1,4 +1,4 @@
-package org.mars.base.extra.config;
+package org.mars.base.config;
 
 import java.util.Collections;
 import java.util.List;

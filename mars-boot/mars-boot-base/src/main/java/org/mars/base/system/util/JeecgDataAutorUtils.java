@@ -1,7 +1,7 @@
 package org.mars.base.system.util;
 
-import org.mars.base.system.vo.SysPermissionDataRuleModel;
-import org.mars.base.system.vo.SysUserCacheInfo;
+import org.mars.base.model.SysPermissionDataRuleModel;
+import org.mars.base.model.SysUserCacheInfo;
 import org.mars.base.util.SpringContextUtils;
 import org.springframework.util.StringUtils;
 

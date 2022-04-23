@@ -10,7 +10,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
-
+/**
+ * @Author: Mars
+ * @Description: 省份城市数据
+ * @Date: 2022年4月23日
+ */
 @Component("pca")
 public class ProvinceCityArea {
 

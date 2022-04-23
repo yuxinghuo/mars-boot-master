@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.system.entity.SysUserAgent;
 import org.mars.system.service.ISysUserAgentService;
 import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;

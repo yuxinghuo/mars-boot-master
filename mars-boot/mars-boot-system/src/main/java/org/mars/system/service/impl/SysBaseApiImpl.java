@@ -19,9 +19,9 @@ import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.constant.DataBaseConstant;
 import org.mars.base.constant.WebsocketConst;
-import org.mars.base.exception.JeecgBootException;
-import org.mars.base.extra.api.IExtraSysBaseAPI;
-import org.mars.base.system.vo.*;
+import org.mars.base.exception.BusinessException;
+import org.mars.base.model.*;
+import org.mars.base.system.api.ISysBaseAPI;
 import org.mars.base.util.IPUtils;
 import org.mars.base.util.SpringContextUtils;
 import org.mars.base.util.SysAnnmentTypeEnum;
@@ -59,7 +59,7 @@ import java.util.Map;
  */
 @Slf4j
 @Service
-public class SysBaseApiImpl implements IExtraSysBaseAPI {
+public class SysBaseApiImpl implements ISysBaseAPI {
     /** 当前系统数据库类型 */
     private static String DB_TYPE = "";
     @Autowired
@@ -317,7 +317,7 @@ public class SysBaseApiImpl implements IExtraSysBaseAPI {
     public String parseTemplateByCode(String templateCode, Map<String, String> map) {
         List<SysMessageTemplate> sysSmsTemplates = sysMessageTemplateService.selectByCode(templateCode);
         if (sysSmsTemplates == null || sysSmsTemplates.size() == 0) {
-            throw new JeecgBootException("消息模板不存在，模板编码：" + templateCode);
+            throw new BusinessException("消息模板不存在，模板编码：" + templateCode);
         }
         SysMessageTemplate sysSmsTemplate = sysSmsTemplates.get(0);
         // 模板内容
@@ -336,7 +336,7 @@ public class SysBaseApiImpl implements IExtraSysBaseAPI {
             String templateCode) {
         List<SysMessageTemplate> sysSmsTemplates = sysMessageTemplateService.selectByCode(templateCode);
         if (sysSmsTemplates == null || sysSmsTemplates.size() == 0) {
-            throw new JeecgBootException("消息模板不存在，模板编码：" + templateCode);
+            throw new BusinessException("消息模板不存在，模板编码：" + templateCode);
         }
         SysMessageTemplate sysSmsTemplate = sysSmsTemplates.get(0);
         // 模板标题
@@ -392,7 +392,7 @@ public class SysBaseApiImpl implements IExtraSysBaseAPI {
             String templateCode, String busType, String busId) {
         List<SysMessageTemplate> sysSmsTemplates = sysMessageTemplateService.selectByCode(templateCode);
         if (sysSmsTemplates == null || sysSmsTemplates.size() == 0) {
-            throw new JeecgBootException("消息模板不存在，模板编码：" + templateCode);
+            throw new BusinessException("消息模板不存在，模板编码：" + templateCode);
         }
         SysMessageTemplate sysSmsTemplate = sysSmsTemplates.get(0);
         // 模板标题
@@ -468,7 +468,7 @@ public class SysBaseApiImpl implements IExtraSysBaseAPI {
                 } else if (dbType.indexOf("postgresql") >= 0) {
                     DB_TYPE = DataBaseConstant.DB_TYPE_POSTGRESQL;
                 } else {
-                    throw new JeecgBootException("数据库类型:[" + dbType + "]不识别!");
+                    throw new BusinessException("数据库类型:[" + dbType + "]不识别!");
                 }
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

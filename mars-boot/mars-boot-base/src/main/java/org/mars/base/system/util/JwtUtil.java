@@ -10,9 +10,9 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.common.base.Joiner;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.constant.DataBaseConstant;
-import org.mars.base.exception.JeecgBootException;
-import org.mars.base.system.vo.LoginUser;
-import org.mars.base.system.vo.SysUserCacheInfo;
+import org.mars.base.exception.BusinessException;
+import org.mars.base.model.LoginUser;
+import org.mars.base.model.SysUserCacheInfo;
 import org.mars.base.util.SpringContextUtils;
 import org.mars.base.util.oConvertUtils;
 
@@ -104,13 +104,13 @@ public class JwtUtil {
      *
      * @param request
      * @return
-     * @throws JeecgBootException
+     * @throws BusinessException
      */
-    public static String getUserNameByToken(HttpServletRequest request) throws JeecgBootException {
+    public static String getUserNameByToken(HttpServletRequest request) throws BusinessException {
         String accessToken = request.getHeader("X-Access-Token");
         String username = getUsername(accessToken);
         if (oConvertUtils.isEmpty(username)) {
-            throw new JeecgBootException("未获取到用户");
+            throw new BusinessException("未获取到用户");
         }
         return username;
     }

@@ -1,42 +1,31 @@
 package org.mars.base.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
- * 类描述:  字典注解
- * 作    者： dangzhenghui
- * 日    期： 2019年03月17日-下午9:37:16
+ * @Author: Mars
+ * @Description: 字典配置注解
+ * @Date: 2022年4月23日
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@Documented
 public @interface Dict {
     /**
-     * 方法描述:  数据code
-     * 作    者： dangzhenghui
-     * 日    期： 2019年03月17日-下午9:37:16
-     *
-     * @return 返回类型： String
+     * @return String
+     * @Description: 数据code
      */
     String dicCode();
 
     /**
-     * 方法描述:  数据Text
-     * 作    者： dangzhenghui
-     * 日    期： 2019年03月17日-下午9:37:16
-     *
-     * @return 返回类型： String
+     * @return String
+     * @Description: 数据Text
      */
     String dicText() default "";
 
     /**
-     * 方法描述: 数据字典表
-     * 作    者： dangzhenghui
-     * 日    期： 2019年03月17日-下午9:37:16
-     *
-     * @return 返回类型： String
+     * @return String
+     * @Description: 数据字典表
      */
     String dictTable() default "";
 }

@@ -6,7 +6,7 @@ import com.baomidou.dynamic.datasource.annotation.DS;
 import lombok.extern.slf4j.Slf4j;
 import org.mars.base.model.Result;
 import org.mars.base.system.api.ISysBaseAPI;
-import org.mars.base.system.vo.DictModel;
+import org.mars.base.model.DictModel;
 import org.mars.base.util.SqlInjectionUtil;
 import org.mars.plan.common.constant.AisinoContstant;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package org.mars.system.service;
 
 import java.util.List;
 
-import org.mars.base.exception.JeecgBootException;
+import org.mars.base.exception.BusinessException;
 import org.mars.system.entity.SysPermission;
 import org.mars.system.model.TreeModel;
 
@@ -21,13 +21,13 @@ public interface ISysPermissionService extends IService<SysPermission> {
 	public List<TreeModel> queryListByParentId(String parentId);
 	
 	/**真实删除*/
-	public void deletePermission(String id) throws JeecgBootException;
+	public void deletePermission(String id) throws BusinessException;
 	/**逻辑删除*/
-	public void deletePermissionLogical(String id) throws JeecgBootException;
+	public void deletePermissionLogical(String id) throws BusinessException;
 	
-	public void addPermission(SysPermission sysPermission) throws JeecgBootException;
+	public void addPermission(SysPermission sysPermission) throws BusinessException;
 	
-	public void editPermission(SysPermission sysPermission) throws JeecgBootException;
+	public void editPermission(SysPermission sysPermission) throws BusinessException;
 	
 	public List<SysPermission> queryByUser(String username);
 	

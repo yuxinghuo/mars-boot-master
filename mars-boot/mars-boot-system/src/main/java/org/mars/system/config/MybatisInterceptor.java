@@ -7,7 +7,7 @@ import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
 import org.apache.shiro.SecurityUtils;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.springframework.stereotype.Component;
 

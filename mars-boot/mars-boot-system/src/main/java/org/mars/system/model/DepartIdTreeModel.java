@@ -3,8 +3,8 @@ package org.mars.system.model;
 import cn.hutool.core.collection.CollUtil;
 import lombok.Data;
 
-import org.mars.base.extra.util.tree.TreeAnnotation;
-import org.mars.base.extra.util.tree.TreeEnum;
+import org.mars.base.util.tree.TreeAnnotation;
+import org.mars.base.util.tree.TreeEnum;
 import org.mars.system.entity.SysDepart;
 
 import java.io.Serializable;

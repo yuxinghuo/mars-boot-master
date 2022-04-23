@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.mars.base.system.vo.DictModel;
+import org.mars.base.model.DictModel;
 import org.mars.base.util.jsonschema.CommonProperty;
 
 import com.alibaba.fastjson.JSONObject;

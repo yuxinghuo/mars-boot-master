@@ -1,9 +1,9 @@
 package org.mars.base.constant;
 
 /**
+ * @Author: Mars
  * @Description: Websocket常量类
- * @author: taoyan
- * @date: 2020年03月23日
+ * @Date: 2022年4月23日
  */
 public class WebsocketConst {
 

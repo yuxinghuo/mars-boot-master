@@ -1,4 +1,4 @@
-package org.mars.base.extra.model;
+package org.mars.base.config;
 
 import lombok.Data;
 

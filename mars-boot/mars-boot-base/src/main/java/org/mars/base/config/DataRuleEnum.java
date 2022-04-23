@@ -1,4 +1,4 @@
-package org.mars.base.extra.config;
+package org.mars.base.config;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

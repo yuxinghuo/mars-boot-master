@@ -21,12 +21,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
- * Springboot全局异常统一处理
- *
- * @author 薛超
- * @version 1.0.5
- * @since 2019年8月1日
+ * @Author: 薛超
+ * @Description: Springboot全局异常统一处理
+ * @Date: 2022年4月23日
  */
+
 @Slf4j
 @RestController
 @EnableConfigurationProperties({ServerProperties.class})

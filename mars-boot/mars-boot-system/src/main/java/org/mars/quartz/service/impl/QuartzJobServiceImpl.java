@@ -3,7 +3,7 @@ package org.mars.quartz.service.impl;
 import java.util.List;
 
 import org.mars.base.constant.CommonConstant;
-import org.mars.base.exception.JeecgBootException;
+import org.mars.base.exception.BusinessException;
 import org.mars.quartz.entity.QuartzJob;
 import org.mars.quartz.mapper.QuartzJobMapper;
 import org.mars.quartz.service.IQuartzJobService;
@@ -116,11 +116,11 @@ public class QuartzJobServiceImpl extends ServiceImpl<QuartzJobMapper, QuartzJob
 
 			scheduler.scheduleJob(jobDetail, trigger);
 		} catch (SchedulerException e) {
-			throw new JeecgBootException("创建定时任务失败", e);
+			throw new BusinessException("创建定时任务失败", e);
 		} catch (RuntimeException e) {
-			throw new JeecgBootException(e.getMessage(), e);
+			throw new BusinessException(e.getMessage(), e);
 		}catch (Exception e) {
-			throw new JeecgBootException("后台找不到该类名：" + jobClassName, e);
+			throw new BusinessException("后台找不到该类名：" + jobClassName, e);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class QuartzJobServiceImpl extends ServiceImpl<QuartzJobMapper, QuartzJob
 			scheduler.deleteJob(JobKey.jobKey(jobClassName));
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
-			throw new JeecgBootException("删除定时任务失败");
+			throw new BusinessException("删除定时任务失败");
 		}
 	}
 

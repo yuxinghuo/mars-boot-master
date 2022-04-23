@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import org.mars.base.constant.FillRuleConstant;
-import org.mars.base.exception.JeecgBootException;
+import org.mars.base.exception.BusinessException;
 import org.mars.base.util.FillRuleUtil;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysCategory;
@@ -70,15 +70,15 @@ public class SysCategoryServiceImpl extends ServiceImpl<SysCategoryMapper, SysCa
 	}
 
 	@Override
-	public List<TreeSelectModel> queryListByCode(String pcode) throws JeecgBootException{
+	public List<TreeSelectModel> queryListByCode(String pcode) throws BusinessException {
 		String pid = ROOT_PID_VALUE;
 		if(oConvertUtils.isNotEmpty(pcode)) {
 			List<SysCategory> list = baseMapper.selectList(new LambdaQueryWrapper<SysCategory>().eq(SysCategory::getCode, pcode));
 			if(list==null || list.size() ==0) {
-				throw new JeecgBootException("该编码【"+pcode+"】不存在，请核实!");
+				throw new BusinessException("该编码【"+pcode+"】不存在，请核实!");
 			}
 			if(list.size()>1) {
-				throw new JeecgBootException("该编码【"+pcode+"】存在多个，请核实!");
+				throw new BusinessException("该编码【"+pcode+"】存在多个，请核实!");
 			}
 			pid = list.get(0).getId();
 		}

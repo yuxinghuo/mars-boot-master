@@ -3,7 +3,7 @@ package org.mars.base.util.dynamic.db;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.system.api.ISysBaseAPI;
-import org.mars.base.system.vo.DynamicDataSourceModel;
+import org.mars.base.model.DynamicDataSourceModel;
 import org.mars.base.util.SpringContextUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import java.util.HashMap;

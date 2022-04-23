@@ -1,4 +1,4 @@
-package org.mars.base.extra.xss;
+package org.mars.base.util.xss;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

@@ -11,7 +11,7 @@ import org.mars.base.model.Result;
 import org.mars.base.annotation.AutoLog;
 import org.mars.base.system.base.controller.JeecgController;
 import org.mars.base.system.query.QueryGenerator;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.*;
 import org.mars.system.service.*;

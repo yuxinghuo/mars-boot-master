@@ -1,4 +1,4 @@
-package org.mars.base.extra.util;
+package org.mars.base.system.util;
 
 import javax.servlet.http.HttpServletRequest;
 

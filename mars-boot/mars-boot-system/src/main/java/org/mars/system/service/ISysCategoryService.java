@@ -3,7 +3,7 @@ package org.mars.system.service;
 import java.util.List;
 import java.util.Map;
 
-import org.mars.base.exception.JeecgBootException;
+import org.mars.base.exception.BusinessException;
 import org.mars.system.entity.SysCategory;
 import org.mars.system.model.TreeSelectModel;
 
@@ -29,7 +29,7 @@ public interface ISysCategoryService extends IService<SysCategory> {
 	 * @param pcode
 	 * @return
 	 */
-	public List<TreeSelectModel> queryListByCode(String pcode) throws JeecgBootException;
+	public List<TreeSelectModel> queryListByCode(String pcode) throws BusinessException;
 	
 	/**
 	  * 根据pid查询子节点集合

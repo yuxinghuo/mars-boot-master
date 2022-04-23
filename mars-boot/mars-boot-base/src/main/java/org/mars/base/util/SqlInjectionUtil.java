@@ -2,7 +2,7 @@ package org.mars.base.util;
 
 import cn.hutool.crypto.SecureUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.mars.base.exception.JeecgBootException;
+import org.mars.base.exception.BusinessException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,7 +34,7 @@ public class SqlInjectionUtil {
 		String javaSign = SecureUtil.md5(signStr);
 		if (!javaSign.equals(sign)) {
 			log.error("表字典，SQL注入漏洞签名校验失败 ：" + sign + "!=" + javaSign+ ",dictCode=" + dictCode);
-			throw new JeecgBootException("无权限访问！");
+			throw new BusinessException("无权限访问！");
 		}
 		log.info(" 表字典，SQL注入漏洞签名校验成功！sign=" + sign + ",dictCode=" + dictCode);
 	}

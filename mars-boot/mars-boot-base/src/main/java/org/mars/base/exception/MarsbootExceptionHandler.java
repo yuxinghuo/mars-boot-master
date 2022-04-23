@@ -1,5 +1,8 @@
 package org.mars.base.exception;
 
+import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.mars.base.model.Result;
@@ -12,25 +15,20 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.StrUtil;
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * 异常处理器
- * 
- * @Author scott
- * @Date 2019
+ * @Author: Mars
+ * @Description: 异常处理器
+ * @Date: 2022年4月23日
  */
 @RestControllerAdvice
 @Slf4j
-public class JeecgBootExceptionHandler {
+public class MarsbootExceptionHandler {
 
     /**
      * 处理自定义异常
      */
-    @ExceptionHandler(JeecgBootException.class)
-    public Result<?> handleRRException(JeecgBootException e) {
+    @ExceptionHandler(BusinessException.class)
+    public Result<?> handleRRException(BusinessException e) {
         log.error(e.getMessage(), e);
         return Result.error(e.getMessage());
     }
@@ -47,7 +45,7 @@ public class JeecgBootExceptionHandler {
         return Result.error("数据库中已存在该记录");
     }
 
-    @ExceptionHandler({ UnauthorizedException.class, AuthorizationException.class })
+    @ExceptionHandler({UnauthorizedException.class, AuthorizationException.class})
     public Result<?> handleAuthorizationException(AuthorizationException e) {
         log.error(e.getMessage(), e);
         return Result.noauth("没有权限，请联系管理员授权");
@@ -68,9 +66,9 @@ public class JeecgBootExceptionHandler {
     }
 
     /**
-     * @Author 政辉
      * @param e
      * @return
+     * @Author 政辉
      */
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Result<?> HttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {

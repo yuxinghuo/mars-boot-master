@@ -27,7 +27,7 @@ import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.api.ISysBaseAPI;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.system.util.JwtUtil;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.PasswordUtil;
 import org.mars.base.util.PmsUtil;
 import org.mars.base.util.RedisUtil;

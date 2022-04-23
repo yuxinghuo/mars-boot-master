@@ -1,6 +1,7 @@
 package org.mars.system.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -8,21 +9,20 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.mars.base.model.Result;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
-import org.mars.base.system.api.ISysBaseAPI;
-import org.mars.base.system.vo.LoginUser;
-import org.mars.base.system.vo.SysUserCacheInfo;
-import org.mars.base.util.PasswordUtil;
-import org.mars.base.util.UUIDGenerator;
-import org.mars.base.util.oConvertUtils;
 import org.mars.base.exception.BusinessException;
+import org.mars.base.model.LoginUser;
+import org.mars.base.model.Result;
+import org.mars.base.model.SysUserCacheInfo;
+import org.mars.base.system.api.ISysBaseAPI;
+import org.mars.base.util.PasswordUtil;
+import org.mars.base.util.oConvertUtils;
+import org.mars.system.entity.*;
+import org.mars.system.mapper.*;
 import org.mars.system.model.SysUserSysDepartModel;
 import org.mars.system.service.ISysUserService;
 import org.mars.system.vo.SysUserDepVo;
-import org.mars.system.entity.*;
-import org.mars.system.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
@@ -440,7 +440,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public void saveThirdUser(SysUser sysUser) {
         // 保存用户
-        String userid = UUIDGenerator.generate();
+        String userid = IdUtil.fastSimpleUUID();
         sysUser.setId(userid);
         baseMapper.insert(sysUser);
         // 获取第三方角色

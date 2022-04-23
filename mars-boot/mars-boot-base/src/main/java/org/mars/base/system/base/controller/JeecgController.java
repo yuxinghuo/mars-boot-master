@@ -14,7 +14,7 @@ import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.afterturn.easypoi.view.EasypoiSingleExcelView;
 import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;

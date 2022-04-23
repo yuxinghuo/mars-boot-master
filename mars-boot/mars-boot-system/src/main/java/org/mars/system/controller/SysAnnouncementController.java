@@ -19,7 +19,7 @@ import org.mars.base.constant.CommonSendStatus;
 import org.mars.base.constant.WebsocketConst;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.system.util.JwtUtil;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.mars.message.websocket.WebSocket;
 import org.mars.system.entity.SysAnnouncement;

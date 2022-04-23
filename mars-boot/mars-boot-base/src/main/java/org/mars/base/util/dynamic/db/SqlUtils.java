@@ -2,7 +2,7 @@ package org.mars.base.util.dynamic.db;
 
 import org.apache.commons.lang.StringUtils;
 import org.mars.base.constant.DataBaseConstant;
-import org.mars.base.system.vo.DynamicDataSourceModel;
+import org.mars.base.model.DynamicDataSourceModel;
 
 import java.text.MessageFormat;
 import java.util.Map;

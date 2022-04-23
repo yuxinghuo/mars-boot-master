@@ -1,4 +1,4 @@
-package org.mars.base.extra.xss;
+package org.mars.base.util.xss;
 
 import cn.hutool.core.util.ReUtil;
 

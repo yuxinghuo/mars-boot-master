@@ -13,7 +13,7 @@ import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.api.ISysBaseAPI;
 import org.mars.base.system.util.JwtUtil;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.*;
 import org.mars.base.util.encryption.EncryptedString;
 import org.mars.system.config.GlobalConfig;

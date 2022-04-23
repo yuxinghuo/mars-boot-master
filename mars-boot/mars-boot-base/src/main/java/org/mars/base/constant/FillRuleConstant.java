@@ -1,9 +1,9 @@
 package org.mars.base.constant;
 
 /**
- * 规则值生成 编码常量类
- * @author: taoyan
- * @date: 2020年04月02日
+ * @Author: Mars
+ * @Description: 规则值生成 编码常量类
+ * @Date: 2022年4月23日
  */
 public class FillRuleConstant {
 

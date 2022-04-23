@@ -1,4 +1,4 @@
-package org.mars.base.extra.util.tree;
+package org.mars.base.util.tree;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;

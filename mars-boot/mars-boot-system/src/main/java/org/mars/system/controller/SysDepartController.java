@@ -16,7 +16,7 @@ import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.system.util.JwtUtil;
-import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.LoginUser;
 import org.mars.base.util.ImportExcelUtil;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysDepart;
