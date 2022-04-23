@@ -27,17 +27,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
         <druid.version>1.1.17</druid.version>
-        <jwt.version>0.9.1</jwt.version>
         <commons.version>2.6</commons.version>
-        <aliyun-java-sdk-core.version>3.2.3</aliyun-java-sdk-core.version>
-        <aliyun-java-sdk-dysmsapi.version>1.0.0</aliyun-java-sdk-dysmsapi.version>
-        <aliyun.oss.version>3.6.0</aliyun.oss.version>
         <guava.version>26.0-jre</guava.version>
         <hutool.version>5.7.15</hutool.version>
         <redisson.version>3.12.5</redisson.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
-        <oracle.version>19.3.0.0</oracle.version>
-        <activiti.version>5.22.0</activiti.version>
         <tomcat.version>9.0.43</tomcat.version>
         <dynamic.version>2.5.4</dynamic.version>
         <fastjson.version>1.2.76</fastjson.version>
