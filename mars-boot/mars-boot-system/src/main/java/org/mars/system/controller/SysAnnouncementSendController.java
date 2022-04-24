@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.model.Result;
 import org.mars.base.constant.CommonConstant;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysAnnouncementSend;
 import org.mars.system.model.AnnouncementSendModel;

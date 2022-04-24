@@ -6,8 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.api.ISysBaseAPI;
-import org.mars.base.system.util.JwtUtil;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 
 import lombok.extern.slf4j.Slf4j;
 

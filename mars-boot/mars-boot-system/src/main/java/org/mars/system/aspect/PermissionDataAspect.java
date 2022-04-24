@@ -13,7 +13,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.mars.base.annotation.PermissionData;
 import org.mars.base.system.util.JeecgDataAutorUtils;
-import org.mars.base.system.util.JwtUtil;
+import org.mars.base.util.JwtUtil;
 import org.mars.base.model.SysPermissionDataRuleModel;
 import org.mars.base.model.SysUserCacheInfo;
 import org.mars.base.util.SpringContextUtils;

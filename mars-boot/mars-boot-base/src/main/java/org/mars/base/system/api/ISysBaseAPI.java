@@ -7,6 +7,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.mars.base.model.*;
+import org.mars.base.system.vo.LoginUser;
 
 /**
  * @Description: 底层共通业务API，提供其他独立模块调用

@@ -15,7 +15,7 @@ import org.mars.base.constant.DataBaseConstant;
 import org.mars.base.config.DataRuleEnum;
 import org.mars.base.system.api.ISysBaseAPI;
 import org.mars.base.system.util.JeecgDataAutorUtils;
-import org.mars.base.system.util.JwtUtil;
+import org.mars.base.util.JwtUtil;
 import org.mars.base.model.SysPermissionDataRuleModel;
 import org.mars.base.util.DateUtils;
 import org.mars.base.util.SpringContextUtils;

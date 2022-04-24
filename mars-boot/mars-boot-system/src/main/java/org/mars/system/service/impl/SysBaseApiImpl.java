@@ -22,6 +22,7 @@ import org.mars.base.constant.WebsocketConst;
 import org.mars.base.exception.BusinessException;
 import org.mars.base.model.*;
 import org.mars.base.system.api.ISysBaseAPI;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.IPUtils;
 import org.mars.base.util.SpringContextUtils;
 import org.mars.base.util.SysAnnmentTypeEnum;

@@ -16,7 +16,7 @@ import org.apache.shiro.SecurityUtils;
 import org.mars.base.model.Result;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.model.DictModel;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.mars.system.entity.SysCategory;
 import org.mars.system.model.TreeSelectModel;

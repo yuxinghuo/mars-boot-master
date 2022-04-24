@@ -16,7 +16,7 @@ import org.mars.base.constant.CommonConstant;
 import org.mars.base.system.query.QueryGenerator;
 import org.mars.base.model.DictModel;
 import org.mars.base.model.DictQuery;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.ImportExcelUtil;
 import org.mars.base.util.SqlInjectionUtil;
 import org.mars.base.util.oConvertUtils;

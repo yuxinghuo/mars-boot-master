@@ -12,7 +12,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.mars.base.annotation.AutoLog;
 import org.mars.base.constant.CommonConstant;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.IPUtils;
 import org.mars.base.util.SpringContextUtils;
 import org.mars.system.entity.SysLog;

@@ -1,13 +1,11 @@
 package org.mars.system.config;
 
-import org.mars.shiro.authc.interceptor.OnlineInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -27,11 +25,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 	private String webAppPath;
 	@Value("${spring.resource.static-locations}")
 	private String staticLocations;
-
-	@Bean
-	public OnlineInterceptor onlineInterceptor(){
-		return new OnlineInterceptor();
-	}
 
 	@Bean
 	public CorsFilter corsFilter() {
@@ -66,11 +59,5 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("doc.html");
-	}
-
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		String [] exculudes = new String[]{"/*.html","/html/**","/js/**","/css/**","/images/**"};
-		registry.addInterceptor(onlineInterceptor()).excludePathPatterns(exculudes).addPathPatterns("/online/cgform/api/**");
 	}
 }

@@ -1,4 +1,4 @@
-package org.mars.base.model;
+package org.mars.base.system.vo;
 
 import java.io.Serializable;
 import java.util.Date;

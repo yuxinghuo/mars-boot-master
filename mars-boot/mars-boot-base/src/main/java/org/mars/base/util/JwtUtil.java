@@ -1,4 +1,4 @@
-package org.mars.base.system.util;
+package org.mars.base.util;
 
 import cn.hutool.core.util.ReflectUtil;
 import com.auth0.jwt.JWT;
@@ -11,10 +11,9 @@ import com.google.common.base.Joiner;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.constant.DataBaseConstant;
 import org.mars.base.exception.BusinessException;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.model.SysUserCacheInfo;
-import org.mars.base.util.SpringContextUtils;
-import org.mars.base.util.oConvertUtils;
+import org.mars.base.system.util.JeecgDataAutorUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

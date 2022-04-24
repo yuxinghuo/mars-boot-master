@@ -8,16 +8,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
-import org.mars.base.model.Result;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
+import org.mars.base.system.vo.LoginUser;
+import org.mars.base.model.Result;
 import org.mars.base.system.api.ISysBaseAPI;
-import org.mars.base.system.util.JwtUtil;
-import org.mars.base.model.LoginUser;
 import org.mars.base.util.*;
-import org.mars.base.util.encryption.EncryptedString;
-import org.mars.system.config.GlobalConfig;
 import org.mars.shiro.vo.DefContants;
+import org.mars.system.config.GlobalConfig;
 import org.mars.system.entity.SysDepart;
 import org.mars.system.entity.SysUser;
 import org.mars.system.model.SysLoginModel;
@@ -76,10 +74,6 @@ public class LoginController {
         Result<JSONObject> result = new Result<JSONObject>();
         String username = sysLoginModel.getUsername();
         String password = sysLoginModel.getPassword();
-        //update-begin--Author:scott  Date:20190805 for：暂时注释掉密码加密逻辑，有点问题
-        //前端密码加密，后端进行密码解密
-        //password = AesEncryptUtil.desEncrypt(sysLoginModel.getPassword().replaceAll("%2B", "\\+")).trim();//密码解密
-        //update-begin--Author:scott  Date:20190805 for：暂时注释掉密码加密逻辑，有点问题
 
         //update-begin-author:taoyan date:20190828 for:校验验证码
         String realKey = StrUtil.NULL;
@@ -144,7 +138,6 @@ public class LoginController {
         //用户登录信息
         userInfo(sysUser, result);
         sysBaseAPI.addLog("用户名: " + username + ",登录成功！", CommonConstant.LOG_TYPE_1, null);
-
         return result;
     }
 
@@ -234,8 +227,6 @@ public class LoginController {
         result.setResult(oConvertUtils.toLowerCasePageList(list));
         return result;
     }
-
-
     /**
      * 登陆成功选择用户当前部门
      *
@@ -258,121 +249,6 @@ public class LoginController {
         result.setResult(obj);
         return result;
     }
-
-    /**
-     * 短信登录接口
-     *
-     * @param jsonObject
-     * @return
-     *//*
-	@PostMapping(value = "/sms")
-	public Result<String> sms(@RequestBody JSONObject jsonObject) {
-		Result<String> result = new Result<String>();
-		String mobile = jsonObject.get("mobile").toString();
-		//手机号模式 登录模式: "2"  注册模式: "1"
-		String smsmode=jsonObject.get("smsmode").toString();
-		log.info(mobile);
-		if(oConvertUtils.isEmpty(mobile)){
-			result.setMessage("手机号不允许为空！");
-			result.setSuccess(false);
-			return result;
-		}
-		Object object = redisUtil.get(mobile);
-		if (object != null) {
-			result.setMessage("验证码10分钟内，仍然有效！");
-			result.setSuccess(false);
-			return result;
-		}
-
-		//随机数
-		String captcha = RandomUtil.randomNumbers(6);
-		JSONObject obj = new JSONObject();
-    	obj.put("code", captcha);
-		try {
-			boolean b = false;
-			//注册模板
-			if (CommonConstant.SMS_TPL_TYPE_1.equals(smsmode)) {
-				SysUser sysUser = sysUserService.getUserByPhone(mobile);
-				if(sysUser!=null) {
-					result.error500(" 手机号已经注册，请直接登录！");
-					sysBaseAPI.addLog("手机号已经注册，请直接登录！", CommonConstant.LOG_TYPE_1, null);
-					return result;
-				}
-				b = DySmsHelper.sendSms(mobile, obj, DySmsEnum.REGISTER_TEMPLATE_CODE);
-			}else {
-				//登录模式，校验用户有效性
-				SysUser sysUser = sysUserService.getUserByPhone(mobile);
-				result = sysUserService.checkUserIsEffective(sysUser);
-				if(!result.isSuccess()) {
-					return result;
-				}
-
-				*//**
-     * smsmode 短信模板方式  0 .登录模板、1.注册模板、2.忘记密码模板
-     *//*
-				if (CommonConstant.SMS_TPL_TYPE_0.equals(smsmode)) {
-					//登录模板
-					b = DySmsHelper.sendSms(mobile, obj, DySmsEnum.LOGIN_TEMPLATE_CODE);
-				} else if(CommonConstant.SMS_TPL_TYPE_2.equals(smsmode)) {
-					//忘记密码模板
-					b = DySmsHelper.sendSms(mobile, obj, DySmsEnum.FORGET_PASSWORD_TEMPLATE_CODE);
-				}
-			}
-
-			if (b == false) {
-				result.setMessage("短信验证码发送失败,请稍后重试");
-				result.setSuccess(false);
-				return result;
-			}
-			//验证码10分钟内有效
-			redisUtil.set(mobile, captcha, 600);
-			//update-begin--Author:scott  Date:20190812 for：issues#391
-			//result.setResult(captcha);
-			//update-end--Author:scott  Date:20190812 for：issues#391
-			result.setSuccess(true);
-
-		} catch (ClientException e) {
-			e.printStackTrace();
-			result.error500(" 短信接口未配置，请联系管理员！");
-			return result;
-		}
-		return result;
-	}
-*/
-
-    /**
-     * 手机号登录接口
-     *
-     * @param jsonObject
-     * @return
-     */
-/*	@ApiOperation("手机号登录接口")
-	@PostMapping("/phoneLogin")
-	public Result<JSONObject> phoneLogin(@RequestBody JSONObject jsonObject) {
-		Result<JSONObject> result = new Result<JSONObject>();
-		String phone = jsonObject.getString("mobile");
-
-		//校验用户有效性
-		SysUser sysUser = sysUserService.getUserByPhone(phone);
-		result = sysUserService.checkUserIsEffective(sysUser);
-		if(!result.isSuccess()) {
-			return result;
-		}
-
-		String smscode = jsonObject.getString("captcha");
-		Object code = redisUtil.get(phone);
-		if (!smscode.equals(code)) {
-			result.setMessage("手机验证码错误");
-			return result;
-		}
-		//用户信息
-		userInfo(sysUser, result);
-		//添加日志
-		sysBaseAPI.addLog("用户名: " + sysUser.getUsername() + ",登录成功！", CommonConstant.LOG_TYPE_1, null);
-
-		return result;
-	}*/
-
 
     /**
      * 用户信息
@@ -418,20 +294,6 @@ public class LoginController {
         return result;
     }
 
-    /**
-     * 获取加密字符串
-     *
-     * @return
-     */
-    @GetMapping(value = "/getEncryptedString")
-    public Result<Map<String, String>> getEncryptedString() {
-        Result<Map<String, String>> result = new Result<Map<String, String>>();
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("key", EncryptedString.key);
-        map.put("iv", EncryptedString.iv);
-        result.setResult(map);
-        return result;
-    }
 
     /**
      * 后台生成图形验证码 ：有效
@@ -458,62 +320,6 @@ public class LoginController {
         return res;
     }
 
-//	/**
-//	 * app登录
-//	 * @param sysLoginModel
-//	 * @return
-//	 * @throws Exception
-//	 */
-//	@RequestMapping(value = "/mLogin", method = RequestMethod.POST)
-//	public Result<JSONObject> mLogin(@RequestBody SysLoginModel sysLoginModel) throws Exception {
-//		Result<JSONObject> result = new Result<JSONObject>();
-//		String username = sysLoginModel.getUsername();
-//		String password = sysLoginModel.getPassword();
-//
-//		//1. 校验用户是否有效
-//		SysUser sysUser = sysUserService.getUserByName(username);
-//		result = sysUserService.checkUserIsEffective(sysUser);
-//		if(!result.isSuccess()) {
-//			return result;
-//		}
-//
-//		//2. 校验用户名或密码是否正确
-//		String userpassword = PasswordUtil.encrypt(username, password, sysUser.getSalt());
-//		String syspassword = sysUser.getPassword();
-//		if (!syspassword.equals(userpassword)) {
-//			result.error500("用户名或密码错误");
-//			return result;
-//		}
-//
-//		String orgCode = sysUser.getOrgCode();
-//		if(oConvertUtils.isEmpty(orgCode)) {
-//			//如果当前用户无选择部门 查看部门关联信息
-//			List<SysDepart> departs = sysDepartService.queryUserDeparts(sysUser.getId());
-//			if (departs == null || departs.size() == 0) {
-//				result.error500("用户暂未归属部门,不可登录!");
-//				return result;
-//			}
-//			orgCode = departs.get(0).getOrgCode();
-//			sysUser.setOrgCode(orgCode);
-//			this.sysUserService.updateUserDepart(username, orgCode);
-//		}
-//		JSONObject obj = new JSONObject();
-//		//用户登录信息
-//		obj.put("userInfo", sysUser);
-//
-//		// 生成token
-//		String token = JwtUtil.sign(username, syspassword);
-//		// 设置超时时间
-//		redisUtil.set(CommonConstant.PREFIX_USER_TOKEN + token, token);
-//		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME*2 / 1000);
-//		//token 信息
-//		obj.put("token", token);
-//		result.setResult(obj);
-//		result.setSuccess(true);
-//		result.setCode(200);
-//		sysBaseAPI.addLog("用户名: " + username + ",登录成功[移动端]！", CommonConstant.LOG_TYPE_1, null);
-//		return result;
-//	}
 
     /**
      * 图形验证码

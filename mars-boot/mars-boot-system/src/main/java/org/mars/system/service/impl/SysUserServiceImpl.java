@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mars.base.constant.CacheConstant;
 import org.mars.base.constant.CommonConstant;
 import org.mars.base.exception.BusinessException;
-import org.mars.base.model.LoginUser;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.model.Result;
 import org.mars.base.model.SysUserCacheInfo;
 import org.mars.base.system.api.ISysBaseAPI;

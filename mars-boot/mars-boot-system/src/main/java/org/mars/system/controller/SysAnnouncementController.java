@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.hutool.core.util.StrUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.mars.base.model.Result;
@@ -18,8 +19,8 @@ import org.mars.base.constant.CommonConstant;
 import org.mars.base.constant.CommonSendStatus;
 import org.mars.base.constant.WebsocketConst;
 import org.mars.base.system.query.QueryGenerator;
-import org.mars.base.system.util.JwtUtil;
-import org.mars.base.model.LoginUser;
+import org.mars.base.util.JwtUtil;
+import org.mars.base.system.vo.LoginUser;
 import org.mars.base.util.oConvertUtils;
 import org.mars.message.websocket.WebSocket;
 import org.mars.system.entity.SysAnnouncement;
@@ -87,7 +88,7 @@ public class SysAnnouncementController {
 		//排序逻辑 处理
 		String column = req.getParameter("column");
 		String order = req.getParameter("order");
-		if(oConvertUtils.isNotEmpty(column) && oConvertUtils.isNotEmpty(order)) {
+		if(StrUtil.isNotBlank(column) && StrUtil.isNotBlank(order)) {
 			if("asc".equals(order)) {
 				queryWrapper.orderByAsc(oConvertUtils.camelToUnderline(column));
 			}else {

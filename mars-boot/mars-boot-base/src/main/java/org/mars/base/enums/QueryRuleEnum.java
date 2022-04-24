@@ -1,4 +1,4 @@
-package org.mars.base.util.superSearch;
+package org.mars.base.enums;
 
 import org.mars.base.util.oConvertUtils;
 

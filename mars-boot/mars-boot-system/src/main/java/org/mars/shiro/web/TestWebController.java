@@ -7,7 +7,7 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
-import org.mars.base.system.util.JwtUtil;
+import org.mars.base.util.JwtUtil;
 import org.mars.base.util.PasswordUtil;
 import org.mars.shiro.vo.ResponseBean;
 import org.mars.system.entity.SysUser;

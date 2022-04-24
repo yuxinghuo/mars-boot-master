@@ -81,7 +81,6 @@ public class XSSFilterUtil {
 			value = value.replaceAll("<", "＜").replaceAll(">", "＞");
 			value = value.replaceAll("\\(", "（").replaceAll("\\)", "）");
 			value = value.replaceAll("'", "＇");
-			// value = HtmlUtils.htmlEscape(value);
 		}
 		return value;
 	}
