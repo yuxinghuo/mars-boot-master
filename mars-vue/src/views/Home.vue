@@ -12,7 +12,6 @@
     <a-divider> 正常 </a-divider>
 
     <a-card>
-
       <trend flag="up" style="margin-right: 16px;">
         <span slot="term">工资</span>
         5%
