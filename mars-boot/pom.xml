@@ -34,7 +34,7 @@
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <tomcat.version>9.0.43</tomcat.version>
         <dynamic.version>2.5.4</dynamic.version>
-        <fastjson.version>1.2.76</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <spring-boot.shiro.version>1.8.0</spring-boot.shiro.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <!-- 导入导出 -->
